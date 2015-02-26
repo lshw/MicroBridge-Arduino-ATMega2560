@@ -1,0 +1,14 @@
+**/*.hex
+**/*.eep
+**/*.cof
+**/*.elf
+**/*.map
+**/*.sym
+**/*.lss
+**/stk500boot.o
+**/asmfunc.o
+**/stk500boot.lst
+**/asmfunc.lst
+**/stk500boot.s
+**/stk500boot.d
+**/.dep/*
