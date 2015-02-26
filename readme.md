@@ -63,6 +63,8 @@ install Crosspack (http://www.obdev.at/products/crosspack/index.html)
 
 Navigate to My Documents/arduino/hardware/microbridge/bootladers/microbridge/
 
+Use avr-gcc of CrossPack on osx located : /usr/local/CrossPack-AVR-20131216/bin/
+
 issue : 
 	
 	- make clean
