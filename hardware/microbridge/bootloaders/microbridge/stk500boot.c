@@ -242,7 +242,7 @@ void flash_write (DWORD, const BYTE*);	/* Program a flash page (asmfunc.S) */
  * define CPU frequency in Mhz here if not defined in Makefile
  */
 #ifndef F_CPU
-	#define F_CPU 16000000UL
+	#define F_CPU 8000000UL
 #endif
 
 #define	_BLINK_LOOP_COUNT_	(F_CPU / 2250)
@@ -251,7 +251,7 @@ void flash_write (DWORD, const BYTE*);	/* Program a flash page (asmfunc.S) */
  */
 
 #ifndef BAUDRATE
-	#define BAUDRATE 115200
+	#define BAUDRATE 57600
 #endif
 
 /*

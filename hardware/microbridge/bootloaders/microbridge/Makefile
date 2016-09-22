@@ -43,7 +43,7 @@ MCU = atmega2560
 #     processor frequency. You can then use this symbol in your source code to 
 #     calculate timings. Do NOT tack on a 'UL' at the end, this will be done
 #     automatically to create a 32-bit value in your source code.
-F_CPU = 16000000
+F_CPU = 8000000
 
 
 # Bootloader
@@ -336,7 +336,7 @@ mega1280: begin gccversion sizebefore build sizeafter end
 ############################################################
 #	Jul 6,	2010	<MLS> Adding 2560 support
 mega2560:	MCU = atmega2560
-mega2560:	F_CPU = 16000000
+mega2560:	F_CPU = 8000000
 mega2560:	BOOTLOADER_ADDRESS = 3E000
 mega2560:	CFLAGS += -D_MEGA_BOARD_
 mega2560:	begin gccversion sizebefore build sizeafter end 
