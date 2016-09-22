@@ -1145,9 +1145,9 @@ int main(void)
 	}
     
     if(boot_state == 2){
-        if(eeprom_read_byte(0x1FF) == 0xF0){
+        if(eeprom_read_byte(0xFFF) == 0xF0){
            pf_mount(&Fatfs);	/* Initialize file system */
-           if(pf_open("firmware.bin") == FR_OK){
+           if(pf_open("act.bin") == FR_OK){
                DWORD fa;	/* Flash address */
                WORD br;	/* Bytes read */
                uint8_t i = 0;
