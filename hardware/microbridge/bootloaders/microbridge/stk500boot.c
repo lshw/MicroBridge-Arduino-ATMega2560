@@ -1145,9 +1145,19 @@ int main(void)
 	}
     
     if(boot_state == 2){
+    	sendchar('A');
         if(eeprom_read_byte(0xFFF) == 0xF0){
+        	DDRB = DDRB & 0x0F;
+        	PORTB = PORTB & 0xF0;
+	    	DDRA = DDRA | 1; //switch on power pin to sd card
+	 		PORTA = PORTA | 1;
+	 		delay_ms(50);
+
+        	sendchar('B');
            pf_mount(&Fatfs);	/* Initialize file system */
-           if(pf_open("act.bin") == FR_OK){
+
+           if( pf_open("ACT.BIN")== FR_OK){
+           	   sendchar('C');
                DWORD fa;	/* Flash address */
                WORD br;	/* Bytes read */
                uint8_t i = 0;
@@ -1164,7 +1174,7 @@ int main(void)
                sendchar(0x0d);
                sendchar(0x0a);
                check = 0;
-               eeprom_write_byte (0x1FF, 0xFF);
+               eeprom_write_byte (0xFFF, 0xFF);
            }
         }
     }
