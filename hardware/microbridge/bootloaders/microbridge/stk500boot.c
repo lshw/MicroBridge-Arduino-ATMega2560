@@ -1149,14 +1149,16 @@ int main(void)
         if(eeprom_read_byte(0xFFF) == 0xF0){
         	DDRB = DDRB & 0x0F;
         	PORTB = PORTB & 0xF0;
-	    	DDRA = DDRA | 1; //switch on power pin to sd card
-	 		PORTA = PORTA | 1;
+	    	DDRA = DDRA | 2; //switch on power pin to sd card
+	 		PORTA = PORTA | 2;
 	 		delay_ms(50);
 
         	sendchar('B');
-           pf_mount(&Fatfs);	/* Initialize file system */
+            sendchar(pf_mount(&Fatfs));	/* Initialize file system */
+            int pfstatus=pf_open("ACT.BIN");
+            sendchar(pfstatus);
 
-           if( pf_open("ACT.BIN")== FR_OK){
+           if( pfstatus== FR_OK){
            	   sendchar('C');
                DWORD fa;	/* Flash address */
                WORD br;	/* Bytes read */

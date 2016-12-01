@@ -11,8 +11,8 @@
 //#define	PORT_CS	_SFR_IO_ADDR(PORTB), 2
 
 // Arduino Ethernet
-#define	DDR_CS	_SFR_IO_ADDR(DDRB), 0	// MMC CS pin (DDR, PORT)
-#define	PORT_CS	_SFR_IO_ADDR(PORTB), 0
+#define	DDR_CS	_SFR_IO_ADDR(DDRB), 6	// MMC CS pin (DDR, PORT)
+#define	PORT_CS	_SFR_IO_ADDR(PORTB), 6
 
 
 #define	DDR_CK	_SFR_IO_ADDR(DDRB), 1	// MMC SCLK pin (DDR, PORT)

@@ -12,7 +12,7 @@ int led = 13;
 #include <avr/wdt.h>
 // the setup routine runs once when you press reset:
 void setup() {                
-  Serial.begin(115200);
+  Serial.begin(57600);
   Serial.println("Press 'F' and 'enter' to set flagbit in eeprom 0x1FF to 0xF0 ");
   Serial.println("also to induce watchdog timeout which triggers the bootloader ");
   Serial.println("and flashes the new firmware on the sd card");
@@ -31,7 +31,7 @@ void loop() {
  if(inChar == 'F'){
     Serial.println("");
     Serial.println("rebooting and flashing with firmware.bin on sdcard"); 
-    EEPROM.write(0x1FF,0xF0);
+    EEPROM.write(4095, 0xf0);
     wdt_reset();
     delay(600); // wait 600ms to timeout wdt
  }
