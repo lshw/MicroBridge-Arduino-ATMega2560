@@ -5,6 +5,10 @@
 **/*.map
 **/*.sym
 **/*.lss
+**/pff.o
+**/pff.list
+**/mmc.o
+**/mmc.list
 **/stk500boot.o
 **/asmfunc.o
 **/stk500boot.lst
